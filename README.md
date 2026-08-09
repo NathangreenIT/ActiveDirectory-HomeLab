@@ -59,4 +59,4 @@ Built a Windows Server lab using Active Directory to manage users, groups, and f
 
 ## HR user
 ![HR Access](HR-access.png)
-![IT Denied](HR-denied(2).png)
+![IT Denied](HR-Itdeny.png)
