@@ -32,3 +32,17 @@ Built a Windows Server lab using Active Directory to manage users, groups, and f
 - Using security groups instead of users
 - Applying least privilege access control
 ---
+
+##Screenshots
+
+## Active Directory setup
+![AD User](ad-user.png)
+![IT Group](IT group.png)
+
+## Permissions configuration
+![NTFS Permissions](ntfs-permissions.png)
+![Share Permissions](share-permissions.png)
+
+## Testing Access
+![IT Access](IT-access.png)
+![HR Denied](hr-denied.png)
