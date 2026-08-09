@@ -37,7 +37,7 @@ Built a Windows Server lab using Active Directory to manage users, groups, and f
 
 ## Active Directory setup
 ![AD User](ad-user.png)
-![IT Group](IT group.png)
+![IT Group](IT-group.png)
 
 ## Permissions configuration
 ![NTFS Permissions](ntfs-permissions.png)
