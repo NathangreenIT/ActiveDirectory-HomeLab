@@ -7,7 +7,7 @@ Built a Windows Server lab using Active Directory to manage users, groups, and f
 - Created user: `jdoe`
 - Created security group: `IT`
 - Added user to group
-- Created shared folder: `\\Server\Shared`
+- Created shared folder: \\WIN-2UUDQ76C8Q4\Shared
 - Configured share permissions
 - Configured NTFS permissions
 ---
@@ -31,6 +31,7 @@ Built a Windows Server lab using Active Directory to manage users, groups, and f
 - Difference between Share vs NTFS permissions
 - Using security groups instead of users
 - Applying least privilege access control
+- Practiced troubleshooting permission issues when access did not initially work.
 ---
 
 ##Screenshots
