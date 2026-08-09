@@ -6,8 +6,11 @@ Built a Windows Server lab using Active Directory to manage users, groups, and f
 - Created domain: `homelab.local`
 - Created user: `jdoe`
 - Created security group: `IT`
-- Added user to group
+- Created user: `hruser1`
+- Created security group: `HR`
+- Added users to respective groups
 - Created shared folder: "\\\WIN-2UUDQ76C8Q4\Shared"
+- Created Subfolders `IT`, `HR`
 - Configured share permissions
 - Configured NTFS permissions
 ---
@@ -18,13 +21,18 @@ Built a Windows Server lab using Active Directory to manage users, groups, and f
 - IT group → Modify access
 
 ##HR Folder
+- Hr group -> Modify access
 - Access restricted (non-members denied)
 ---
 
 ##Testing
-- Logged in as domain user (`jdoe`)
+- Logged in as IT user (`jdoe`)
 - Verified access to IT folder (read/write works)
 - Verified HR folder shows access denied
+
+- Logged in as HR user (`hruser1`)
+- Verfied access to HR folder (read/write works)
+- Verified IT folder showed access denied
 ---
 
 ##What I Learned
@@ -45,5 +53,8 @@ Built a Windows Server lab using Active Directory to manage users, groups, and f
 ![Share Permissions](share-permissions.png)
 
 ## Testing Access
+## It user
 ![IT Access](IT-access.png)
 ![HR Denied](hr-denied.png)
+
+## HR user
