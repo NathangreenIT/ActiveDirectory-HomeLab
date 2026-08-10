@@ -1,46 +1,92 @@
+# Active Directory Home Lab 
+## Overview
+This project simulates a basic enterprise IT environment using Active Directory.
 
- 📌 Overview
-Built a Windows Server lab using Active Directory to manage users, groups, and file permissions.
+I created a domain controller and client machine, configured users and security groups, set up shared folders with NTFS and share permissions.
 ---
-##What I Did
-- Created domain: `homelab.local`
-- Created user: `jdoe`
-- Created security group: `IT`
-- Created user: `hruser1`
-- Created security group: `HR`
+
+## Lab Setup
+- installed Windows Sever (Domain Controller)
+- Created domain: HOMELAB.local
+- Joined a windows client machine to the domain
+--- 
+
+## Users & Groups
+- Created Users:
+- jdoe (IT)
+- hruser1 (HR)
+
+- Created security groups:
+- IT
+- HR
 - Added users to respective groups
-- Created shared folder: "\\\WIN-2UUDQ76C8Q4\Shared"
-- Created Subfolders `IT`, `HR`
-- Configured share permissions
-- Configured NTFS permissions
+
+Permissions were assigned using security groups instead of individual users to align with best practices.
 ---
 
-##Permissions Setup
+## File Shares & Permissions
 
-##IT Folder
-- IT group → Modify access
+## Server Side
+- Created folder: c:\Shared
+- Created Subfolders:
+   -IT
+   -HR
+- Shared folder as: "\\\WIN-2UUDQ76C8Q4\Shared"
 
-##HR Folder
-- Hr group -> Modify access
-- Access restricted (non-members denied)
+## Permissions
+- IT group -> Modify access to It folder
+- HR group -> Modify access to HR folder
+- HR group -> No access to IT folder
 ---
 
-##Testing
-- Logged in as IT user (`jdoe`)
-- Verified access to IT folder (read/write works)
-- Verified HR folder shows access denied
+## Testing (Client Side)
 
-- Logged in as HR user (`hruser1`)
-- Verfied access to HR folder (read/write works)
-- Verified IT folder showed access denied
+## IT User (jdoe)
+- Can access IT folder (read/write works)
+- cannot access HR folder
+
+## HR User
+- Verified Access HR folder (read/write works)
+- Cannot access It folder
 ---
 
-##What I Learned
-- Difference between Share vs NTFS permissions
-- Using security groups instead of users
-- Applying least privilege access control
-- Practiced troubleshooting permission issues when access did not initially work.
+## Group Policy
+
+## Goal
+Automatically map a network drive for IT users.
+
+## Configuration (Server Side)
+- Created GPO: Map IT Drive
+- Navigated to:
+- User configuration -> preferences -> Window Settings -> Drive Maps
+
+- Mapped Drive:
+-  Z: -> \\WIN-2UUDQ76c84Q\Shared\IT
+
+## Targeting 
+- Enabled item-level targeting
+- Applied only to IT security group
 ---
+
+## GPO Testing (Client Side)
+
+## IT User (jdoe)
+- Z: drive appears automatically
+- Full access to IT folder
+- No access to HR folder
+
+## HR User (hruser1)
+- Z: drive does NOT appear
+- No access to IT resources
+- Full access to HR folder
+---
+
+## Results
+- Built working Active Directory environment
+- Implemented role based NTFS and share permissions
+- Creating and applying Group Policy Objects (GPOs)
+- Trouble shooting domain, DNS, and permission issues
+- Importance of role-based access control in It environments
 
 ##Screenshots
 
@@ -48,6 +94,7 @@ Built a Windows Server lab using Active Directory to manage users, groups, and f
 ![AD User](ad-user.png)
 ![IT Group](IT-group.png)
 ![HR Group Membership](HR-group-membership.png)
+
 ## Permissions configuration
 ![NTFS Permissions](ntfs-permissions.png)
 ![Share Permissions](share-permissions.png)
@@ -60,3 +107,8 @@ Built a Windows Server lab using Active Directory to manage users, groups, and f
 ## HR user
 ![HR Access](HR-access.png)
 ![IT Denied](HR-Itdeny.png)
+
+## GPO Targeting 
+![GPO Targeting Config](GPO-targeting.png)
+![IT Z:drive access](IT-zdrive.png)
+![HR Z:drive access](HR-zdrive.png)
