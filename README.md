@@ -110,5 +110,8 @@ Automatically map a network drive for IT users.
 
 ## GPO Targeting 
 ![GPO Targeting Config](GPO-targeting.png)
+
+## IT user Z drive access
 ![IT Z:drive access](IT-zdrive.png)
+## HR user no Z drive access
 ![HR Z:drive access](HR-zdrive.png)
